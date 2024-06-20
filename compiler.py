@@ -18,6 +18,7 @@ def main():
     source_code = input("Enter the source code: ")
 
     # Tokenize the source code
+    # The regex pattern matches keywords, identifiers, and operators
     tokens = re.findall(r'[a-zA-Z_]\w*|[-+*/=<>&|!%^]', source_code)
 
     print("Tokens:")
@@ -28,6 +29,9 @@ def main():
             print("Identifier:", token)
         elif is_operator(token):
             print("Operator:", token)
+        else:
+            print("Unknown token:", token)
 
 if __name__ == "__main__":
     main()
+
